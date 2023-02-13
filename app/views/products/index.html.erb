@@ -1,7 +1,7 @@
 <h1>Products</h1>
-<br/>
-<% @products = Product.order("title DESC").each do |product| %>
-  <h2><%= product.title %></h2>
-  <p>Price: <%= product.price %></p>
-  <p>Stock Quantity: <%= product.stock_quantity %></p>
+<ul>
+<% @products = Product.order("title ASC").each do |product| %>
+  <li><%= product.title %> - <%= link_to "Show Product", product %></li>
 <% end %>
+</ul>
+
